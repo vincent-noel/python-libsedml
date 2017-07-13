@@ -17,6 +17,6 @@ setup(name             = "python-libsedml",
       author           = "Frank T. Bergmann, Vincent Noel (packaging)",
       url              = "http://sed-ml.org/",
       packages=['libsedml'],
-      packages_dir={'libsedml': 'libsedml'},
+      packages_dir={'libsedml': join(dirname(abspath(__file__)), 'libsedml')},
       include_package_data=True,
 )

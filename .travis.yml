@@ -14,4 +14,4 @@ install:
 - docker exec test_env /bin/bash /home/travis/build/vincent-noel/python-libsedml/scripts/install_dep.sh
 
 script:
-- docker exec test_env /bin/bash -c "cd /home/travis/build/vincent-noel/python-libsedml/; /usr/bin/python setup.py install"
+- docker exec test_env /usr/bin/python /home/travis/build/vincent-noel/python-libsedml/setup.py install
