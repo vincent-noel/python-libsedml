@@ -10,7 +10,7 @@ setup(
       description      = "LibSEDML Python API",
       long_description = ("libSEDML is a library for reading, writing and "+
       "manipulating SEDML. It is written in ISO C and C++, supports SEDML "+
-      "Levels 1, Version 1-3, and runs on Debian Linux For more information"+
+      "Levels 1, Version 1-3, and runs on Debian Linux. For more information"+
       "about SEDML, please see http://sed-ml.org/."),
       license          = "LGPL",
       author           = "Frank T. Bergmann, Vincent Noel (packaging)",
