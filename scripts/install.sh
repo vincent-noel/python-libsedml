@@ -20,7 +20,7 @@ cd $ROOT_DIR/builds
 
 ${SCRIPTS_DIR}/install_libsbml.sh
 ${SCRIPTS_DIR}/install_libnuml.sh
-#${SCRIPTS_DIR}/install_libsedml.sh
+${SCRIPTS_DIR}/install_libsedml.sh
 
 cp ${ROOT_DIR}/install/lib/python2.7/site-packages/libsedml/{libsedml.py,_libsedml.so} ${ROOT_DIR}/libsedml/
 
