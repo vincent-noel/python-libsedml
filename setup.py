@@ -16,6 +16,7 @@ setup(name             = "python-libsedml",
       license          = "LGPL",
       author           = "Frank T. Bergmann, Vincent Noel (packaging)",
       url              = "http://sed-ml.org/",
-      packages=find_packages(),
+      packages=['libsedml'],
+      packages_dir={'libsedml': 'libsedml'},
       include_package_data=True,
 )

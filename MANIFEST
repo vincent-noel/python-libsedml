@@ -1,5 +1,0 @@
-setup.py
-libsedml/
-libsedml/_libsedml.so
-libsedml/__init__.py
-libsedml/libsedml.py
