@@ -99,3 +99,9 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# Builds, install, and libsedml.py
+.idea/
+builds/
+install/
+libsedml/libsedml.py

@@ -2,10 +2,11 @@
 Python package for the SED-ML library, built using latest images from SBML sourceforge repository, NuML and SEDML Github repositories.
 For more information about SEDML, please see [http://sed-ml.org/](http://sed-ml.org/).
 
+This package should work for the last three LTS version of debian and ubuntu
 
 # Dependencies
 
-subversion git g++ python-dev python-setuptools cmake swig zlib1g-dev libxml2-dev libbz2-dev libcurl4-openssl-dev
+subversion git g++ python-dev python-setuptools cmake>=3.0.2 swig zlib1g-dev libxml2-dev libbz2-dev libcurl4-openssl-dev
 
 
 # Install
