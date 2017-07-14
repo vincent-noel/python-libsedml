@@ -1,5 +1,5 @@
 #!/bin/bash
-dnf install subversion git wget \
+dnf install -y subversion git wget \
             gcc-c++ python2-devel python2-setuptools swig  \
             libxml2-devel zlib-devel bzip2-devel libcurl-devel
 
