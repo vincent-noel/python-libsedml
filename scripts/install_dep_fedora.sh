@@ -1,7 +1,8 @@
 #!/bin/bash
 dnf install -y subversion git wget \
             gcc-c++ python2-devel python2-setuptools swig  \
-            libxml2-devel zlib-devel bzip2-devel libcurl-devel
+            libxml2-devel zlib-devel bzip2-devel libcurl-devel \
+            redhat-rpm-config cmake
 
 # Installing cmake update if cmake version < 3.0.2
 currentver="$(cmake --version | head -n1 | cut -d" " -f 3)"
