@@ -14,7 +14,7 @@ else
 fi
 ROOT_DIR=`dirname $SCRIPTS_DIR`
 
-if [ ! -f ${ROOT_DIR}/libnuml/_libnuml.so ]
+if [ ! -f ${ROOT_DIR}/libsedml/_libsedml.so ]
 then
 
     mkdir ${ROOT_DIR}/builds
