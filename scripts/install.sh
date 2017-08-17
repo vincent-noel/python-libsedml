@@ -14,18 +14,23 @@ else
 fi
 ROOT_DIR=`dirname $SCRIPTS_DIR`
 
-mkdir $ROOT_DIR/builds
-mkdir $ROOT_DIR/install
-cd $ROOT_DIR/builds
+if [ ! -f ${ROOT_DIR}/libnuml/_libnuml.so ]
+then
 
-${SCRIPTS_DIR}/install_libsbml.sh
-${SCRIPTS_DIR}/install_libnuml.sh
-${SCRIPTS_DIR}/install_libsedml.sh
+    mkdir ${ROOT_DIR}/builds
+    mkdir ${ROOT_DIR}/install
+    cd ${ROOT_DIR}/builds
 
-mkdir -p ${ROOT_DIR}/libsedml
-cp ${ROOT_DIR}/install/lib/python2.7/site-packages/libsedml/libsedml.py ${ROOT_DIR}/libsedml/__init__.py
-cp ${ROOT_DIR}/install/lib/python2.7/site-packages/libsedml/_libsedml.so ${ROOT_DIR}/libsedml/
+    ${SCRIPTS_DIR}/install_libsbml.sh
+    ${SCRIPTS_DIR}/install_libnuml.sh
+    ${SCRIPTS_DIR}/install_libsedml.sh
 
-cd $EXEC_DIR
+    mkdir -p ${ROOT_DIR}/libsedml
+    cp ${ROOT_DIR}/install/lib/python2.7/site-packages/libsedml/libsedml.py ${ROOT_DIR}/libsedml/__init__.py
+    cp ${ROOT_DIR}/install/lib/python2.7/site-packages/libsedml/_libsedml.so ${ROOT_DIR}/libsedml/
+
+fi
+
+cd ${EXEC_DIR}
 
 
