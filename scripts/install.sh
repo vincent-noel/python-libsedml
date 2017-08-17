@@ -22,7 +22,9 @@ ${SCRIPTS_DIR}/install_libsbml.sh
 ${SCRIPTS_DIR}/install_libnuml.sh
 ${SCRIPTS_DIR}/install_libsedml.sh
 
-cp ${ROOT_DIR}/install/lib/python2.7/site-packages/libsedml/{libsedml.py,_libsedml.so} ${ROOT_DIR}/libsedml/
+mkdir -p ${ROOT_DIR}/libsedml
+cp ${ROOT_DIR}/install/lib/python2.7/site-packages/libsedml/libsedml.py ${ROOT_DIR}/libsedml/__init__.py
+cp ${ROOT_DIR}/install/lib/python2.7/site-packages/libsedml/_libsedml.so ${ROOT_DIR}/libsedml/
 
 cd $EXEC_DIR
 

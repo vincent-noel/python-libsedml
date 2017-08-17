@@ -5,7 +5,7 @@ cd libsbml
 mkdir build
 cd build
 
-cmake -DCMAKE_INSTALL_PREFIX=../../../install -DWITH_PYTHON=ON -DLIBSBML_USE_LEGACY_MATH=ON ..
+cmake -DCMAKE_INSTALL_PREFIX=../../../dependencies -DWITH_PYTHON=ON -DLIBSBML_USE_LEGACY_MATH=ON ..
 make
 make install
 
