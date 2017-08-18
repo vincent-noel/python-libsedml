@@ -12,6 +12,7 @@ before_install:
 install:
 - docker run -di --name test_env -v $(pwd):/home/travis/build/vincent-noel/python-libsedml ubuntu:xenial bash
 - docker exec test_env /bin/bash /home/travis/build/vincent-noel/python-libsedml/scripts/install_dep.sh
+- docker exec test_env /bin/bash -c "cd /home/travis/build/vincent-noel/python-libsedml; /usr/bin/python setup.py install"
 
 script:
-- docker exec test_env /bin/bash -c "cd /home/travis/build/vincent-noel/python-libsedml; /usr/bin/python setup.py install"
+- docker exec test_env /usr/bin/python -c "import libsedml"
