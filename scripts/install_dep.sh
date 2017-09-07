@@ -24,7 +24,7 @@ requiredver="3.0.0"
 if [ "$(printf "$requiredver\n$currentver" | sort -V | head -n1)" != "$requiredver" ]; then
     wget https://downloads.sourceforge.net/project/swig/swig/swig-3.0.12/swig-3.0.12.tar.gz
     tar -zxf swig-3.0.12.tar.gz
-    cd swig 3.0.12
+    cd swig-3.0.12
     ./configure
     make
     make install
