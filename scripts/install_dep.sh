@@ -17,18 +17,16 @@ if [ "$(printf "$requiredver\n$currentver" | sort -V | head -n1)" != "$requiredv
     ln -s /opt/cmake-3.8.2-Linux-x86_64/bin/cmake /usr/bin
 fi
 
-# Installing swig update if swig version < 3.0.8
-currentver="$(swig -version | head -n 2 | tail -n 1 | cut -d" " -f3)"
-requiredver="3.0.8"
-if [ "$(printf "$requiredver\n$currentver" | sort -V | head -n1)" != "$requiredver" ]; then
-    apt-get install -y libpcre3-dev
-    wget https://downloads.sourceforge.net/project/swig/swig/swig-3.0.8/swig-3.0.8.tar.gz
-    tar -zxf swig-3.0.8.tar.gz
-    cd swig-3.0.8
-    ./configure
-    make
-    make install
-    cd ..
-    rm /usr/bin/swig
-    ln -s /usr/local/bin/swig /usr/bin/
-fi
+SWIG_VERSION=$1
+# Forcing swig_version to $SWIG_VERSION
+
+apt-get install -y libpcre3-dev
+wget https://downloads.sourceforge.net/project/swig/swig/swig-${SWIG_VERSION}/swig-${SWIG_VERSION}.tar.gz
+tar -zxf swig-${SWIG_VERSION}.tar.gz
+cd swig-${SWIG_VERSION}
+./configure
+make
+make install
+cd ..
+rm /usr/bin/swig
+ln -s /usr/local/bin/swig /usr/bin/

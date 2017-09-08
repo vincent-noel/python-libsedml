@@ -6,12 +6,40 @@ language: python
 
 python: 2.7
 
+env:
+  - SWIG_VERSION=3.0.12
+  - SWIG_VERSION=3.0.11
+  - SWIG_VERSION=3.0.10
+  - SWIG_VERSION=3.0.9
+  - SWIG_VERSION=3.0.8
+  - SWIG_VERSION=3.0.7
+  - SWIG_VERSION=3.0.6
+  - SWIG_VERSION=3.0.5
+  - SWIG_VERSION=3.0.4
+  - SWIG_VERSION=3.0.3
+  - SWIG_VERSION=3.0.2
+  - SWIG_VERSION=3.0.1
+  - SWIG_VERSION=3.0.0
+  - SWIG_VERSION=2.0.12
+  - SWIG_VERSION=2.0.11
+  - SWIG_VERSION=2.0.10
+  - SWIG_VERSION=2.0.9
+  - SWIG_VERSION=2.0.8
+  - SWIG_VERSION=2.0.7
+  - SWIG_VERSION=2.0.6
+  - SWIG_VERSION=2.0.5
+  - SWIG_VERSION=2.0.4
+  - SWIG_VERSION=2.0.3
+  - SWIG_VERSION=2.0.2
+  - SWIG_VERSION=2.0.1
+
+
 before_install:
 - docker pull ubuntu:xenial
 
 install:
 - docker run -di --name test_env -v $(pwd):/home/travis/build/vincent-noel/python-libsedml ubuntu:xenial bash
-- docker exec test_env /bin/bash /home/travis/build/vincent-noel/python-libsedml/scripts/install_dep.sh
+- docker exec test_env /bin/bash /home/travis/build/vincent-noel/python-libsedml/scripts/install_dep.sh $SWIG_VERSION
 - docker exec test_env /bin/bash -c "cd /home/travis/build/vincent-noel/python-libsedml; /usr/bin/python setup.py install"
 
 script:
