@@ -4,7 +4,7 @@ cd libsbml
 mkdir build
 cd build
 
-cmake -DCMAKE_INSTALL_PREFIX=../../../install/ -DEXTRA_LIBS="xml2;z;bz2;" -DLIBSBML_USE_LEGACY_MATH=ON ..
+cmake -DCMAKE_INSTALL_PREFIX=../../../install/ -DEXTRA_LIBS="xml2;z;bz2;" -DSWIG_DIR=/usr/local/share/swig/3.0.8/ -DSWIG_EXECUTABLE=/usr/local/share/swig/3.0.8/bin/swig -DLIBSBML_USE_LEGACY_MATH=ON ..
 make
 make install
 
