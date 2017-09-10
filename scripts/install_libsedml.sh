@@ -1,4 +1,4 @@
-git clone https://github.com/fbergmann/libSEDML.git
+git clone -b swig_compatibility https://github.com/vincent-noel/libSEDML.git
 cd libSEDML
 
 mkdir build
