@@ -18,11 +18,17 @@ if [ "$(printf "$requiredver\n$currentver" | sort -V | head -n1)" != "$requiredv
 fi
 
 # Installing swig
-wget https://downloads.sourceforge.net/project/swig/swig/swig-3.0.8/swig-3.0.8.tar.gz
-tar -zxf swig-3.0.8.tar.gz
-cd swig-3.0.8
-./configure --exec-prefix=/usr/local/share/swig/3.0.8/
-make
-make install
-cd ..
-
+currentver="$(swig -version | head -n2 | tail -n1 | cut -d" " -f3)"
+printf "> Swig version : $currentver\n"
+min_version="1.3.37"
+max_version="3.0.9"
+if [ "$(printf "$min_version\n$currentver" | sort -V | head -n1)" == "$currentver" ] || [ "$(printf "$max_version\n$currentver" | sort -V | head -n1)" != "$currentver" ]
+then
+    wget https://downloads.sourceforge.net/project/swig/swig/swig-3.0.8/swig-3.0.8.tar.gz
+    tar -zxf swig-3.0.8.tar.gz
+    cd swig-3.0.8
+    ./configure --exec-prefix=/usr/local/share/swig/3.0.8/
+    make
+    make install
+    cd ..
+fi
